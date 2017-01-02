@@ -25,7 +25,7 @@ show-disasm: echo
 	objdump -d echo
 
 cmd.gdb:
-	printf "%s\n" "break _start" "layout asm" "layout regs" "run" > $@
+	printf "%s\n" "break _start" "run" "layout asm" "layout regs" > $@
 
 debug: echo cmd.gdb
 	gdb -x cmd.gdb --args echo arg1 arg2 arg3

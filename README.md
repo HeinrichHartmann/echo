@@ -26,27 +26,29 @@ ld -m elf_i386 -s -o echo echo.o
 
 ## Debug
 
-0. Run echo under gdb
+![demo](https://raw.githubusercontent.com/HeinrichHartmann/echo/master/gdb_demo.png)
+
+0. Start gdb
 
    ```
    gdb --args echo arg1 arg2 arg3
    ```
 
-1. Enable TUI mode:
+1. Run echo:
+
+   ```
+   break _start
+   run
+   ```
+
+2. Enable TUI mode
 
    ```
    layout asm
    layout regs
    ```
 
-2. Step through code:
-
-   ```
-   break _start
-   run
-   si
-   si
-   ```
+3. Start stepping with `si`
 
 Or, just use:
 
